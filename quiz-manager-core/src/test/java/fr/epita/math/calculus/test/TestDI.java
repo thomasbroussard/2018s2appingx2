@@ -29,7 +29,7 @@ public class TestDI {
 
 	@BeforeClass
 	public static void beforeAll() {
-		// executed before any test
+	  
 	}
 
 	@Before
