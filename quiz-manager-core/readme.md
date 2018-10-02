@@ -1,5 +1,9 @@
 # TODO LIST
 
+## 02/10/2018
+Pour la prochaine session, tenter de faire fonctionner (ie déployer le microservice "quiz-manager-rest-services"). Il reste un petit effort de configuration
+
+
 ## 25/09/2018
 Implémenter un MCQChoiceDAO sur le modèle du QuestionDAO
 bonus : essayer d'éliminer le getGenericClass du GenericDAO

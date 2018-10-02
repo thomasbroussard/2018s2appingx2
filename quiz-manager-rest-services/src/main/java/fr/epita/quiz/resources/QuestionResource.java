@@ -13,7 +13,7 @@ import fr.epita.quiz.datamodel.Question;
 import fr.epita.quiz.services.data.QuestionDS;
 import fr.epita.quiz.transport.QuestionMessage;
 
-@Path("questions")
+@Path("/questions")
 public class QuestionResource {
 
 
