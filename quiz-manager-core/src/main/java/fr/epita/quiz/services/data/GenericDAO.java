@@ -9,10 +9,9 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
+import org.springframework.stereotype.Repository;
 
-import fr.epita.quiz.datamodel.Question;
 
 public abstract class GenericDAO<T> {
 
@@ -73,4 +72,7 @@ public abstract class GenericDAO<T> {
 		return getSession().get(getGenericClass(), id);
 	}
 
+	protected SessionFactory getSessionFactory() {
+		return this.sf;
+	}
 }

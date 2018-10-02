@@ -19,6 +19,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.epita.quiz.datamodel.Question;
+import fr.epita.quiz.services.data.MCQChoiceDAO;
+import fr.epita.quiz.services.data.QuestionDAO;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -30,6 +32,13 @@ public class TestJPA {
 	@Inject
 	@Named("sessionFactory")
 	SessionFactory sf;
+	
+	@Inject
+	QuestionDAO questDAO;
+	
+	@Inject
+	MCQChoiceDAO mcqDAO;
+	
 	private static boolean isInit = false;
 
 	@Before
@@ -49,22 +58,14 @@ public class TestJPA {
 		question.setQuestionLabel("What is JPA ?");
 
 		// when
-		Session session = this.sf.openSession();
+		questDAO.create(question);
 
-		Transaction tx = session.beginTransaction();
-		session.save(question);
-		tx.commit();
-		session.close();
-
-		// then
-		Session sessionCheck = this.sf.openSession();
-
-		Query<Question> searchQuery = sessionCheck.createQuery("from Question", Question.class);
-		List<Question> list = searchQuery.list();
+		// then*
+		Question criteria = new Question();
+		criteria.setQuestionLabel("JPA");
+		List<Question> list = questDAO.search(criteria);
 		LOGGER.info(list);
 		Assert.assertNotEquals(0, list.size());
-		
-		sessionCheck.close();
 
 	}
 
