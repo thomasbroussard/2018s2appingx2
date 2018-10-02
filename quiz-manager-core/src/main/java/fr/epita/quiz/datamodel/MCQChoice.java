@@ -22,6 +22,16 @@ public class MCQChoice {
 	
 	} 
 	
+	
+	
+	public MCQChoice(String choice, Boolean valid, Question question) {
+		this.choice = choice;
+		this.valid = valid;
+		this.question = question;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}

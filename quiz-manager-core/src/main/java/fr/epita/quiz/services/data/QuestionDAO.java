@@ -13,6 +13,13 @@ import org.springframework.stereotype.Repository;
 
 import fr.epita.quiz.datamodel.Question;
 
+/**
+ * Le DAO de question a la fonction de gérer les données de la classe persistente "Question".
+ * Les 4 opérations de base doivent être implémentées : create / search / update / delete
+ * @see Question 
+ * @author tbrou
+ *
+ */
 @Repository
 public class QuestionDAO extends GenericDAO<Question>{
 

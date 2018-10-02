@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Cette entité est associée à une table en base de données.
+ * 
+ * @author tbrou
+ *
+ */
 @Entity
 public class Question {
 
@@ -18,6 +24,15 @@ public class Question {
 		
 	}
 	
+	
+	
+
+	public Question(String questionLabel) {
+		this.questionLabel = questionLabel;
+	}
+
+
+
 
 	public String getQuestionLabel() {
 		return questionLabel;
