@@ -1,5 +1,7 @@
 package fr.epita.quiz.services.data;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
@@ -47,6 +49,11 @@ public class QuestionDS {
 		choice.setQuestion(question);
 		//TODO vérifier les doublons.
 		mcqDao.create(choice);
+	}
+
+	public List<Question> search(Question question) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
