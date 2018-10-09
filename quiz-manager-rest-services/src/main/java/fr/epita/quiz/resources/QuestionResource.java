@@ -25,10 +25,12 @@ public class QuestionResource {
 	@Produces(value = { MediaType.APPLICATION_JSON })
 	public List<QuestionMessage> findAllQuestions() {
 		final List<Question> questions = ds.search(new Question());
-		final List<QuestionMessage> messages = new ArrayList<>();
+		final List<QuestionMessage> messages = new ArrayList<QuestionMessage>();
 		for (final Question question : questions) {
 			final QuestionMessage message = new QuestionMessage();
-			message.setTitle(question.getQuestionLabel());
+			message.setQuestionLabel(question.getQuestionLabel());
 		}
 		return messages;
 	}
+	
+}

@@ -1,4 +1,4 @@
-package fr.epita.quiz.transport;
+package fr.epita.quiz.services.web.transport;
 
 import java.util.List;
 
